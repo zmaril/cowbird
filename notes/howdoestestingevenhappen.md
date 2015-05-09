@@ -16,6 +16,6 @@ anything](https://github.com/postgres/postgres/blob/9a0884176fdfa51551d6a3b26fa0
 
 1535: [Apparently there is something called SPI](https://github.com/zmaril/cowbird/blob/0a5f351af7f643e1818be91b186d89cf18e97670/notes/makecheckoutput.txt#L1535), which stands for [Server Proramming Interface](http://www.postgresql.org/docs/devel/static/spi.html). The more you know!
 
-1544: [This seems to run the tests, but it cannot be run by itself sadly](https://github.com/zmaril/cowbird/blob/0a5f351af7f643e1818be91b186d89cf18e97670/notes/makecheckoutput.txt#L1544).
+1544: [This seems to run the tests. Make sure to run make check beforehand so that pg_regress exists in the proper place. Also, the command must be run from a certain directory. You are smart though and can figure it out.](https://github.com/zmaril/cowbird/blob/0a5f351af7f643e1818be91b186d89cf18e97670/notes/makecheckoutput.txt#L1544).
 
 
