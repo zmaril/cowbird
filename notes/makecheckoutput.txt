@@ -1,0 +1,1342 @@
+rm -rf '/home/zmaril/software/cowbird/postgres'/tmp_install
+make -C '.' DESTDIR='/home/zmaril/software/cowbird/postgres'/tmp_install install
+make[1]: Entering directory '/home/zmaril/software/cowbird/postgres'
+make -C src install
+make[2]: Entering directory '/home/zmaril/software/cowbird/postgres/src'
+make -C common install
+make[3]: Entering directory '/home/zmaril/software/cowbird/postgres/src/common'
+make -C ../backend submake-errcodes
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[4]: Nothing to be done for 'submake-errcodes'.
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+/usr/bin/install -c -m 644  libpgcommon.a '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/libpgcommon.a'
+make[3]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/common'
+make -C port install
+make[3]: Entering directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../backend submake-errcodes
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[4]: Nothing to be done for 'submake-errcodes'.
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+/usr/bin/install -c -m 644  libpgport.a '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/libpgport.a'
+make[3]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C timezone install
+make[3]: Entering directory '/home/zmaril/software/cowbird/postgres/src/timezone'
+make -C ../../src/port all
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../backend submake-errcodes
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[5]: Nothing to be done for 'submake-errcodes'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../../src/common all
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/common'
+make -C ../backend submake-errcodes
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[5]: Nothing to be done for 'submake-errcodes'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/common'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/share'
+./zic -d '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/share/timezone' -p 'US/Eastern' ./data/africa ./data/antarctica ./data/asia ./data/australasia ./data/europe ./data/northamerica ./data/southamerica ./data/pacificnew ./data/etcetera ./data/factory ./data/backward ./data/systemv
+make -C tznames install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/timezone/tznames'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/share/timezonesets'
+/usr/bin/install -c -m 644 ./Africa.txt ./America.txt ./Antarctica.txt ./Asia.txt ./Atlantic.txt ./Australia.txt ./Etc.txt ./Europe.txt ./Indian.txt ./Pacific.txt '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/share/timezonesets'
+/usr/bin/install -c -m 644 ./Default ./Australia ./India '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/share/timezonesets'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/timezone/tznames'
+make[3]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/timezone'
+make -C backend install
+make[3]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make -C ../../src/port all
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../backend submake-errcodes
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[5]: Nothing to be done for 'submake-errcodes'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../../src/common all
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/common'
+make -C ../backend submake-errcodes
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[5]: Nothing to be done for 'submake-errcodes'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/common'
+make -C catalog schemapg.h
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/catalog'
+make[4]: 'schemapg.h' is up to date.
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/catalog'
+make -C access all
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/access'
+make -C brin all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/access/brin'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/access/brin'
+make -C common all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/access/common'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/access/common'
+make -C gin all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/access/gin'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/access/gin'
+make -C gist all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/access/gist'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/access/gist'
+make -C hash all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/access/hash'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/access/hash'
+make -C heap all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/access/heap'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/access/heap'
+make -C index all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/access/index'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/access/index'
+make -C nbtree all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/access/nbtree'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/access/nbtree'
+make -C rmgrdesc all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/access/rmgrdesc'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/access/rmgrdesc'
+make -C spgist all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/access/spgist'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/access/spgist'
+make -C transam all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/access/transam'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/access/transam'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/access'
+make -C bootstrap all
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/bootstrap'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/bootstrap'
+make -C catalog all
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/catalog'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/catalog'
+make -C parser all
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/parser'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/parser'
+make -C commands all
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/commands'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/commands'
+make -C executor all
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/executor'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/executor'
+make -C foreign all
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/foreign'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/foreign'
+make -C lib all
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/lib'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/lib'
+make -C libpq all
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/libpq'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/libpq'
+make -C main all
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/main'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/main'
+make -C nodes all
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/nodes'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/nodes'
+make -C optimizer all
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/optimizer'
+make -C geqo all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/optimizer/geqo'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/optimizer/geqo'
+make -C path all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/optimizer/path'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/optimizer/path'
+make -C plan all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/optimizer/plan'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/optimizer/plan'
+make -C prep all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/optimizer/prep'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/optimizer/prep'
+make -C util all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/optimizer/util'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/optimizer/util'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/optimizer'
+make -C port all
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/port'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/port'
+make -C postmaster all
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/postmaster'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/postmaster'
+make -C regex all
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/regex'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/regex'
+make -C replication all
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/replication'
+make -C logical all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/replication/logical'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/replication/logical'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/replication'
+make -C rewrite all
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/rewrite'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/rewrite'
+make -C storage all
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/storage'
+make -C buffer all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/storage/buffer'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/storage/buffer'
+make -C file all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/storage/file'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/storage/file'
+make -C freespace all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/storage/freespace'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/storage/freespace'
+make -C ipc all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/storage/ipc'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/storage/ipc'
+make -C large_object all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/storage/large_object'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/storage/large_object'
+make -C lmgr all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/storage/lmgr'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/storage/lmgr'
+make -C page all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/storage/page'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/storage/page'
+make -C smgr all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/storage/smgr'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/storage/smgr'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/storage'
+make -C tcop all
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/tcop'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/tcop'
+make -C tsearch all
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/tsearch'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/tsearch'
+make -C utils all
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils'
+make -C adt all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/adt'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/adt'
+make -C cache all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/cache'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/cache'
+make -C error all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/error'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/error'
+make -C fmgr all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/fmgr'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/fmgr'
+make -C hash all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/hash'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/hash'
+make -C init all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/init'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/init'
+make -C mb all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb'
+make -C misc all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/misc'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/misc'
+make -C mmgr all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mmgr'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mmgr'
+make -C resowner all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/resowner'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/resowner'
+make -C sort all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/sort'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/sort'
+make -C time all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/time'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/time'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils'
+make -C ../../src/timezone all
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/timezone'
+make -C ../../src/port all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../backend submake-errcodes
+make[6]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[6]: Nothing to be done for 'submake-errcodes'.
+make[6]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../../src/common all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/common'
+make -C ../backend submake-errcodes
+make[6]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[6]: Nothing to be done for 'submake-errcodes'.
+make[6]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/common'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/timezone'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin' '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/share'
+/usr/bin/install -c  postgres '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin/postgres'
+ln -s postgres '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin/postmaster'
+make -C catalog install-data
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/catalog'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/share'
+/usr/bin/install -c -m 644 `for f in ./postgres.bki; do test -r $f && echo $f && break; done` '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/share/postgres.bki'
+/usr/bin/install -c -m 644 `for f in ./postgres.description; do test -r $f && echo $f && break; done` '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/share/postgres.description'
+/usr/bin/install -c -m 644 `for f in ./postgres.shdescription; do test -r $f && echo $f && break; done` '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/share/postgres.shdescription'
+/usr/bin/install -c -m 644 ./system_views.sql '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/share/system_views.sql'
+/usr/bin/install -c -m 644 ./information_schema.sql '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/share/information_schema.sql'
+/usr/bin/install -c -m 644 ./sql_features.txt '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/share/sql_features.txt'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/catalog'
+make -C tsearch install-data
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/tsearch'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/share' '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/share/tsearch_data'
+/usr/bin/install -c -m 644 ./synonym_sample.syn ./thesaurus_sample.ths ./hunspell_sample.affix ./ispell_sample.affix ./ispell_sample.dict '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/share/tsearch_data/'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/tsearch'
+/usr/bin/install -c -m 644 ./libpq/pg_hba.conf.sample '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/share/pg_hba.conf.sample'
+/usr/bin/install -c -m 644 ./libpq/pg_ident.conf.sample '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/share/pg_ident.conf.sample'
+/usr/bin/install -c -m 644 ./utils/misc/postgresql.conf.sample '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/share/postgresql.conf.sample'
+/usr/bin/install -c -m 644 ./access/transam/recovery.conf.sample '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/share/recovery.conf.sample'
+make[3]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make -C backend/utils/mb/conversion_procs install
+make[3]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs'
+make -C ascii_and_mic installdirs
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/ascii_and_mic'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/ascii_and_mic'
+make -C cyrillic_and_mic installdirs
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/cyrillic_and_mic'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/cyrillic_and_mic'
+make -C euc_cn_and_mic installdirs
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/euc_cn_and_mic'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/euc_cn_and_mic'
+make -C euc_jp_and_sjis installdirs
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/euc_jp_and_sjis'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/euc_jp_and_sjis'
+make -C euc_kr_and_mic installdirs
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/euc_kr_and_mic'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/euc_kr_and_mic'
+make -C euc_tw_and_big5 installdirs
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/euc_tw_and_big5'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/euc_tw_and_big5'
+make -C latin2_and_win1250 installdirs
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/latin2_and_win1250'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/latin2_and_win1250'
+make -C latin_and_mic installdirs
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/latin_and_mic'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/latin_and_mic'
+make -C utf8_and_ascii installdirs
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_ascii'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_ascii'
+make -C utf8_and_big5 installdirs
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_big5'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_big5'
+make -C utf8_and_cyrillic installdirs
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_cyrillic'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_cyrillic'
+make -C utf8_and_euc_cn installdirs
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_euc_cn'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_euc_cn'
+make -C utf8_and_euc_jp installdirs
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_euc_jp'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_euc_jp'
+make -C utf8_and_euc_kr installdirs
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_euc_kr'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_euc_kr'
+make -C utf8_and_euc_tw installdirs
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_euc_tw'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_euc_tw'
+make -C utf8_and_gb18030 installdirs
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_gb18030'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_gb18030'
+make -C utf8_and_gbk installdirs
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_gbk'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_gbk'
+make -C utf8_and_iso8859 installdirs
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_iso8859'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_iso8859'
+make -C utf8_and_iso8859_1 installdirs
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_iso8859_1'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_iso8859_1'
+make -C utf8_and_johab installdirs
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_johab'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_johab'
+make -C utf8_and_sjis installdirs
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_sjis'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_sjis'
+make -C utf8_and_win installdirs
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_win'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_win'
+make -C utf8_and_uhc installdirs
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_uhc'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_uhc'
+make -C utf8_and_euc2004 installdirs
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_euc2004'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_euc2004'
+make -C utf8_and_sjis2004 installdirs
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_sjis2004'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_sjis2004'
+make -C euc2004_sjis2004 installdirs
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/euc2004_sjis2004'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/euc2004_sjis2004'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/share' '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+make -C ascii_and_mic install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/ascii_and_mic'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+/usr/bin/install -c -m 755  ascii_and_mic.so '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/ascii_and_mic.so'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/ascii_and_mic'
+make -C cyrillic_and_mic install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/cyrillic_and_mic'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+/usr/bin/install -c -m 755  cyrillic_and_mic.so '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/cyrillic_and_mic.so'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/cyrillic_and_mic'
+make -C euc_cn_and_mic install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/euc_cn_and_mic'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+/usr/bin/install -c -m 755  euc_cn_and_mic.so '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/euc_cn_and_mic.so'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/euc_cn_and_mic'
+make -C euc_jp_and_sjis install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/euc_jp_and_sjis'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+/usr/bin/install -c -m 755  euc_jp_and_sjis.so '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/euc_jp_and_sjis.so'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/euc_jp_and_sjis'
+make -C euc_kr_and_mic install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/euc_kr_and_mic'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+/usr/bin/install -c -m 755  euc_kr_and_mic.so '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/euc_kr_and_mic.so'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/euc_kr_and_mic'
+make -C euc_tw_and_big5 install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/euc_tw_and_big5'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+/usr/bin/install -c -m 755  euc_tw_and_big5.so '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/euc_tw_and_big5.so'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/euc_tw_and_big5'
+make -C latin2_and_win1250 install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/latin2_and_win1250'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+/usr/bin/install -c -m 755  latin2_and_win1250.so '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/latin2_and_win1250.so'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/latin2_and_win1250'
+make -C latin_and_mic install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/latin_and_mic'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+/usr/bin/install -c -m 755  latin_and_mic.so '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/latin_and_mic.so'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/latin_and_mic'
+make -C utf8_and_ascii install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_ascii'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+/usr/bin/install -c -m 755  utf8_and_ascii.so '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/utf8_and_ascii.so'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_ascii'
+make -C utf8_and_big5 install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_big5'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+/usr/bin/install -c -m 755  utf8_and_big5.so '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/utf8_and_big5.so'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_big5'
+make -C utf8_and_cyrillic install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_cyrillic'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+/usr/bin/install -c -m 755  utf8_and_cyrillic.so '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/utf8_and_cyrillic.so'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_cyrillic'
+make -C utf8_and_euc_cn install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_euc_cn'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+/usr/bin/install -c -m 755  utf8_and_euc_cn.so '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/utf8_and_euc_cn.so'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_euc_cn'
+make -C utf8_and_euc_jp install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_euc_jp'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+/usr/bin/install -c -m 755  utf8_and_euc_jp.so '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/utf8_and_euc_jp.so'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_euc_jp'
+make -C utf8_and_euc_kr install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_euc_kr'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+/usr/bin/install -c -m 755  utf8_and_euc_kr.so '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/utf8_and_euc_kr.so'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_euc_kr'
+make -C utf8_and_euc_tw install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_euc_tw'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+/usr/bin/install -c -m 755  utf8_and_euc_tw.so '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/utf8_and_euc_tw.so'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_euc_tw'
+make -C utf8_and_gb18030 install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_gb18030'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+/usr/bin/install -c -m 755  utf8_and_gb18030.so '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/utf8_and_gb18030.so'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_gb18030'
+make -C utf8_and_gbk install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_gbk'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+/usr/bin/install -c -m 755  utf8_and_gbk.so '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/utf8_and_gbk.so'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_gbk'
+make -C utf8_and_iso8859 install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_iso8859'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+/usr/bin/install -c -m 755  utf8_and_iso8859.so '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/utf8_and_iso8859.so'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_iso8859'
+make -C utf8_and_iso8859_1 install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_iso8859_1'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+/usr/bin/install -c -m 755  utf8_and_iso8859_1.so '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/utf8_and_iso8859_1.so'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_iso8859_1'
+make -C utf8_and_johab install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_johab'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+/usr/bin/install -c -m 755  utf8_and_johab.so '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/utf8_and_johab.so'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_johab'
+make -C utf8_and_sjis install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_sjis'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+/usr/bin/install -c -m 755  utf8_and_sjis.so '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/utf8_and_sjis.so'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_sjis'
+make -C utf8_and_win install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_win'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+/usr/bin/install -c -m 755  utf8_and_win.so '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/utf8_and_win.so'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_win'
+make -C utf8_and_uhc install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_uhc'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+/usr/bin/install -c -m 755  utf8_and_uhc.so '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/utf8_and_uhc.so'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_uhc'
+make -C utf8_and_euc2004 install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_euc2004'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+/usr/bin/install -c -m 755  utf8_and_euc2004.so '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/utf8_and_euc2004.so'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_euc2004'
+make -C utf8_and_sjis2004 install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_sjis2004'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+/usr/bin/install -c -m 755  utf8_and_sjis2004.so '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/utf8_and_sjis2004.so'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/utf8_and_sjis2004'
+make -C euc2004_sjis2004 install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/euc2004_sjis2004'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+/usr/bin/install -c -m 755  euc2004_sjis2004.so '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/euc2004_sjis2004.so'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs/euc2004_sjis2004'
+/usr/bin/install -c -m 644 conversion_create.sql '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/share'
+make[3]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/utils/mb/conversion_procs'
+make -C backend/snowball install
+make[3]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/snowball'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/share' '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/share/tsearch_data'
+/usr/bin/install -c -m 755  dict_snowball.so '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/dict_snowball.so'
+/usr/bin/install -c -m 644 snowball_create.sql '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/share'
+make[3]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/snowball'
+make -C include install
+make[3]: Entering directory '/home/zmaril/software/cowbird/postgres/src/include'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/libpq' '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/internal/libpq'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server'/access '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server'/bootstrap '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server'/catalog '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server'/commands '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server'/common '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server'/datatype '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server'/executor '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server'/foreign '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server'/lib '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server'/libpq '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server'/mb '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server'/nodes '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server'/optimizer '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server'/parser '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server'/postmaster '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server'/regex '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server'/replication '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server'/rewrite '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server'/storage '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server'/tcop '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server'/snowball '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server'/snowball/libstemmer '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server'/tsearch '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server'/tsearch/dicts '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server'/utils '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server'/port '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server'/port/atomics '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server'/port/win32 '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server'/port/win32_msvc '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server'/port/win32_msvc/sys '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server'/port/win32/arpa '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server'/port/win32/netinet '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server'/port/win32/sys '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server'/portability
+/usr/bin/install -c -m 644 ./postgres_ext.h   '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include'
+/usr/bin/install -c -m 644 ./libpq/libpq-fs.h '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/libpq'
+/usr/bin/install -c -m 644 pg_config.h     '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include'
+/usr/bin/install -c -m 644 pg_config_ext.h '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include'
+/usr/bin/install -c -m 644 pg_config_os.h  '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include'
+/usr/bin/install -c -m 644 ./pg_config_manual.h '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include'
+/usr/bin/install -c -m 644 ./c.h            '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/internal'
+/usr/bin/install -c -m 644 ./port.h         '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/internal'
+/usr/bin/install -c -m 644 ./postgres_fe.h  '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/internal'
+/usr/bin/install -c -m 644 ./libpq/pqcomm.h '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/internal/libpq'
+/usr/bin/install -c -m 644 pg_config.h     '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server'
+/usr/bin/install -c -m 644 pg_config_ext.h '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server'
+/usr/bin/install -c -m 644 pg_config_os.h  '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server'
+/usr/bin/install -c -m 644 utils/errcodes.h '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server/utils'
+/usr/bin/install -c -m 644 utils/fmgroids.h '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server/utils'
+cp ./*.h '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server'/ || exit; \
+chmod 644 '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server'/*.h  || exit; \
+for dir in access bootstrap catalog commands common datatype executor foreign lib libpq mb nodes optimizer parser postmaster regex replication rewrite storage tcop snowball snowball/libstemmer tsearch tsearch/dicts utils port port/atomics port/win32 port/win32_msvc port/win32_msvc/sys port/win32/arpa port/win32/netinet port/win32/sys portability; do \
+  cp ./$dir/*.h '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server'/$dir/ || exit; \
+  chmod 644 '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server'/$dir/*.h  || exit; \
+done
+make[3]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/include'
+make -C interfaces install
+make[3]: Entering directory '/home/zmaril/software/cowbird/postgres/src/interfaces'
+make -C libpq install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/interfaces/libpq'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib' '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/pkgconfig' 
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include' '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/internal' '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/share'
+/usr/bin/install -c -m 755  libpq.so.5.8 '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/libpq.so.5.8'
+cd '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib' && \
+rm -f libpq.so.5 && \
+ln -s libpq.so.5.8 libpq.so.5
+cd '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib' && \
+rm -f libpq.so && \
+ln -s libpq.so.5.8 libpq.so
+/usr/bin/install -c -m 644  libpq.a '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/libpq.a'
+/usr/bin/install -c -m 644 libpq.pc '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/pkgconfig/libpq.pc'
+/usr/bin/install -c -m 644 ./libpq-fe.h '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include'
+/usr/bin/install -c -m 644 ./libpq-events.h '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include'
+/usr/bin/install -c -m 644 ./libpq-int.h '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/internal'
+/usr/bin/install -c -m 644 ./pqexpbuffer.h '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/internal'
+/usr/bin/install -c -m 644 ./pg_service.conf.sample '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/share/pg_service.conf.sample'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/interfaces/libpq'
+make -C ecpg install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/interfaces/ecpg'
+make -C include install
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/interfaces/ecpg/include'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include' '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/informix/esql'
+/usr/bin/install -c -m 644 ./ecpgerrno.h ./ecpglib.h ./ecpgtype.h ./sqlca.h ./sql3types.h ./ecpg_informix.h ./pgtypes_error.h ./pgtypes_numeric.h ./pgtypes_timestamp.h ./pgtypes_date.h ./pgtypes_interval.h ./sqlda.h ./sqlda-compat.h ./sqlda-native.h '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/'
+/usr/bin/install -c -m 644 ./datetime.h ./decimal.h ./sqltypes.h '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/informix/esql/'
+/usr/bin/install -c -m 644 ../../../../src/interfaces/ecpg/include/ecpg_config.h '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include'
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/interfaces/ecpg/include'
+make -C pgtypeslib install
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/interfaces/ecpg/pgtypeslib'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib' '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/pkgconfig' 
+/usr/bin/install -c -m 755  libpgtypes.so.3.6 '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/libpgtypes.so.3.6'
+cd '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib' && \
+rm -f libpgtypes.so.3 && \
+ln -s libpgtypes.so.3.6 libpgtypes.so.3
+cd '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib' && \
+rm -f libpgtypes.so && \
+ln -s libpgtypes.so.3.6 libpgtypes.so
+/usr/bin/install -c -m 644  libpgtypes.a '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/libpgtypes.a'
+/usr/bin/install -c -m 644 libpgtypes.pc '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/pkgconfig/libpgtypes.pc'
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/interfaces/ecpg/pgtypeslib'
+make -C ecpglib install
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/interfaces/ecpg/ecpglib'
+make -C ../../../../src/interfaces/libpq all
+make[6]: Entering directory '/home/zmaril/software/cowbird/postgres/src/interfaces/libpq'
+make[6]: Nothing to be done for 'all'.
+make[6]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/interfaces/libpq'
+make -C ../../../../src/interfaces/ecpg/pgtypeslib all
+make[6]: Entering directory '/home/zmaril/software/cowbird/postgres/src/interfaces/ecpg/pgtypeslib'
+make[6]: Nothing to be done for 'all'.
+make[6]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/interfaces/ecpg/pgtypeslib'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib' '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/pkgconfig' 
+/usr/bin/install -c -m 755  libecpg.so.6.7 '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/libecpg.so.6.7'
+cd '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib' && \
+rm -f libecpg.so.6 && \
+ln -s libecpg.so.6.7 libecpg.so.6
+cd '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib' && \
+rm -f libecpg.so && \
+ln -s libecpg.so.6.7 libecpg.so
+/usr/bin/install -c -m 644  libecpg.a '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/libecpg.a'
+/usr/bin/install -c -m 644 libecpg.pc '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/pkgconfig/libecpg.pc'
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/interfaces/ecpg/ecpglib'
+make -C compatlib install
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/interfaces/ecpg/compatlib'
+make -C ../../../../src/interfaces/ecpg/ecpglib all
+make[6]: Entering directory '/home/zmaril/software/cowbird/postgres/src/interfaces/ecpg/ecpglib'
+make -C ../../../../src/interfaces/libpq all
+make[7]: Entering directory '/home/zmaril/software/cowbird/postgres/src/interfaces/libpq'
+make[7]: Nothing to be done for 'all'.
+make[7]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/interfaces/libpq'
+make -C ../../../../src/interfaces/ecpg/pgtypeslib all
+make[7]: Entering directory '/home/zmaril/software/cowbird/postgres/src/interfaces/ecpg/pgtypeslib'
+make[7]: Nothing to be done for 'all'.
+make[7]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/interfaces/ecpg/pgtypeslib'
+make[6]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/interfaces/ecpg/ecpglib'
+make -C ../../../../src/interfaces/ecpg/pgtypeslib all
+make[6]: Entering directory '/home/zmaril/software/cowbird/postgres/src/interfaces/ecpg/pgtypeslib'
+make[6]: Nothing to be done for 'all'.
+make[6]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/interfaces/ecpg/pgtypeslib'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib' '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/pkgconfig' 
+/usr/bin/install -c -m 755  libecpg_compat.so.3.7 '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/libecpg_compat.so.3.7'
+cd '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib' && \
+rm -f libecpg_compat.so.3 && \
+ln -s libecpg_compat.so.3.7 libecpg_compat.so.3
+cd '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib' && \
+rm -f libecpg_compat.so && \
+ln -s libecpg_compat.so.3.7 libecpg_compat.so
+/usr/bin/install -c -m 644  libecpg_compat.a '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/libecpg_compat.a'
+/usr/bin/install -c -m 644 libecpg_compat.pc '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/pkgconfig/libecpg_compat.pc'
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/interfaces/ecpg/compatlib'
+make -C preproc install
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/interfaces/ecpg/preproc'
+make -C ../../../../src/port all
+make[6]: Entering directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../backend submake-errcodes
+make[7]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[7]: Nothing to be done for 'submake-errcodes'.
+make[7]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[6]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../../../../src/common all
+make[6]: Entering directory '/home/zmaril/software/cowbird/postgres/src/common'
+make -C ../backend submake-errcodes
+make[7]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[7]: Nothing to be done for 'submake-errcodes'.
+make[7]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[6]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/common'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin'
+/usr/bin/install -c  ecpg '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin'
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/interfaces/ecpg/preproc'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/interfaces/ecpg'
+make[3]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/interfaces'
+make -C backend/replication/libpqwalreceiver install
+make[3]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend/replication/libpqwalreceiver'
+make -C ../../../../src/interfaces/libpq all
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/interfaces/libpq'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/interfaces/libpq'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+/usr/bin/install -c -m 755  libpqwalreceiver.so '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/libpqwalreceiver.so'
+make[3]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend/replication/libpqwalreceiver'
+make -C bin install
+make[3]: Entering directory '/home/zmaril/software/cowbird/postgres/src/bin'
+make -C initdb install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/bin/initdb'
+make -C ../../../src/port all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../backend submake-errcodes
+make[6]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[6]: Nothing to be done for 'submake-errcodes'.
+make[6]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../../../src/common all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/common'
+make -C ../backend submake-errcodes
+make[6]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[6]: Nothing to be done for 'submake-errcodes'.
+make[6]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/common'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin'
+/usr/bin/install -c  initdb '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin/initdb'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/bin/initdb'
+make -C pg_archivecleanup install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/bin/pg_archivecleanup'
+make -C ../../../src/port all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../backend submake-errcodes
+make[6]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[6]: Nothing to be done for 'submake-errcodes'.
+make[6]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../../../src/common all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/common'
+make -C ../backend submake-errcodes
+make[6]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[6]: Nothing to be done for 'submake-errcodes'.
+make[6]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/common'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin'
+/usr/bin/install -c  pg_archivecleanup '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin/pg_archivecleanup'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/bin/pg_archivecleanup'
+make -C pg_basebackup install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/bin/pg_basebackup'
+make -C ../../../src/interfaces/libpq all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/interfaces/libpq'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/interfaces/libpq'
+make -C ../../../src/port all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../backend submake-errcodes
+make[6]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[6]: Nothing to be done for 'submake-errcodes'.
+make[6]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../../../src/common all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/common'
+make -C ../backend submake-errcodes
+make[6]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[6]: Nothing to be done for 'submake-errcodes'.
+make[6]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/common'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin'
+/usr/bin/install -c  pg_basebackup '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin/pg_basebackup'
+/usr/bin/install -c  pg_receivexlog '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin/pg_receivexlog'
+/usr/bin/install -c  pg_recvlogical '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin/pg_recvlogical'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/bin/pg_basebackup'
+make -C pg_config install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/bin/pg_config'
+make -C ../../../src/port all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../backend submake-errcodes
+make[6]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[6]: Nothing to be done for 'submake-errcodes'.
+make[6]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../../../src/common all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/common'
+make -C ../backend submake-errcodes
+make[6]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[6]: Nothing to be done for 'submake-errcodes'.
+make[6]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/common'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin'
+/usr/bin/install -c -m 755 pg_config '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin/pg_config'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/bin/pg_config'
+make -C pg_controldata install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/bin/pg_controldata'
+make -C ../../../src/port all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../backend submake-errcodes
+make[6]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[6]: Nothing to be done for 'submake-errcodes'.
+make[6]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../../../src/common all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/common'
+make -C ../backend submake-errcodes
+make[6]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[6]: Nothing to be done for 'submake-errcodes'.
+make[6]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/common'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin'
+/usr/bin/install -c  pg_controldata '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin/pg_controldata'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/bin/pg_controldata'
+make -C pg_ctl install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/bin/pg_ctl'
+make -C ../../../src/interfaces/libpq all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/interfaces/libpq'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/interfaces/libpq'
+make -C ../../../src/port all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../backend submake-errcodes
+make[6]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[6]: Nothing to be done for 'submake-errcodes'.
+make[6]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../../../src/common all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/common'
+make -C ../backend submake-errcodes
+make[6]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[6]: Nothing to be done for 'submake-errcodes'.
+make[6]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/common'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin'
+/usr/bin/install -c  pg_ctl '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin/pg_ctl'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/bin/pg_ctl'
+make -C pg_dump install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/bin/pg_dump'
+make -C ../../../src/interfaces/libpq all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/interfaces/libpq'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/interfaces/libpq'
+make -C ../../../src/port all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../backend submake-errcodes
+make[6]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[6]: Nothing to be done for 'submake-errcodes'.
+make[6]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../../../src/common all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/common'
+make -C ../backend submake-errcodes
+make[6]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[6]: Nothing to be done for 'submake-errcodes'.
+make[6]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/common'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin'
+/usr/bin/install -c  pg_dump '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin'/pg_dump
+/usr/bin/install -c  pg_restore '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin'/pg_restore
+/usr/bin/install -c  pg_dumpall '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin'/pg_dumpall
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/bin/pg_dump'
+make -C pg_resetxlog install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/bin/pg_resetxlog'
+make -C ../../../src/port all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../backend submake-errcodes
+make[6]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[6]: Nothing to be done for 'submake-errcodes'.
+make[6]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../../../src/common all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/common'
+make -C ../backend submake-errcodes
+make[6]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[6]: Nothing to be done for 'submake-errcodes'.
+make[6]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/common'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin'
+/usr/bin/install -c  pg_resetxlog '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin/pg_resetxlog'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/bin/pg_resetxlog'
+make -C pg_rewind install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/bin/pg_rewind'
+make -C ../../../src/interfaces/libpq all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/interfaces/libpq'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/interfaces/libpq'
+make -C ../../../src/port all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../backend submake-errcodes
+make[6]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[6]: Nothing to be done for 'submake-errcodes'.
+make[6]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../../../src/common all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/common'
+make -C ../backend submake-errcodes
+make[6]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[6]: Nothing to be done for 'submake-errcodes'.
+make[6]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/common'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin'
+/usr/bin/install -c  pg_rewind '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin/pg_rewind'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/bin/pg_rewind'
+make -C pg_test_fsync install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/bin/pg_test_fsync'
+make -C ../../../src/port all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../backend submake-errcodes
+make[6]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[6]: Nothing to be done for 'submake-errcodes'.
+make[6]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../../../src/common all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/common'
+make -C ../backend submake-errcodes
+make[6]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[6]: Nothing to be done for 'submake-errcodes'.
+make[6]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/common'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin'
+/usr/bin/install -c  pg_test_fsync '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin/pg_test_fsync'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/bin/pg_test_fsync'
+make -C pg_test_timing install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/bin/pg_test_timing'
+make -C ../../../src/port all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../backend submake-errcodes
+make[6]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[6]: Nothing to be done for 'submake-errcodes'.
+make[6]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../../../src/common all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/common'
+make -C ../backend submake-errcodes
+make[6]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[6]: Nothing to be done for 'submake-errcodes'.
+make[6]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/common'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin'
+/usr/bin/install -c  pg_test_timing '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin/pg_test_timing'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/bin/pg_test_timing'
+make -C pg_upgrade install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/bin/pg_upgrade'
+make -C ../../../src/interfaces/libpq all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/interfaces/libpq'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/interfaces/libpq'
+make -C ../../../src/port all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../backend submake-errcodes
+make[6]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[6]: Nothing to be done for 'submake-errcodes'.
+make[6]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../../../src/common all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/common'
+make -C ../backend submake-errcodes
+make[6]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[6]: Nothing to be done for 'submake-errcodes'.
+make[6]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/common'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin'
+/usr/bin/install -c  pg_upgrade '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin/pg_upgrade'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/bin/pg_upgrade'
+make -C pg_xlogdump install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/bin/pg_xlogdump'
+make -C ../../../src/port all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../backend submake-errcodes
+make[6]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[6]: Nothing to be done for 'submake-errcodes'.
+make[6]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../../../src/common all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/common'
+make -C ../backend submake-errcodes
+make[6]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[6]: Nothing to be done for 'submake-errcodes'.
+make[6]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/common'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin'
+/usr/bin/install -c  pg_xlogdump '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin/pg_xlogdump'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/bin/pg_xlogdump'
+make -C pgbench install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/bin/pgbench'
+make -C ../../../src/interfaces/libpq all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/interfaces/libpq'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/interfaces/libpq'
+make -C ../../../src/port all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../backend submake-errcodes
+make[6]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[6]: Nothing to be done for 'submake-errcodes'.
+make[6]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../../../src/common all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/common'
+make -C ../backend submake-errcodes
+make[6]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[6]: Nothing to be done for 'submake-errcodes'.
+make[6]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/common'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin'
+/usr/bin/install -c  pgbench '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin/pgbench'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/bin/pgbench'
+make -C psql install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/bin/psql'
+make -C ../../../src/interfaces/libpq all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/interfaces/libpq'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/interfaces/libpq'
+make -C ../../../src/port all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../backend submake-errcodes
+make[6]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[6]: Nothing to be done for 'submake-errcodes'.
+make[6]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../../../src/common all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/common'
+make -C ../backend submake-errcodes
+make[6]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[6]: Nothing to be done for 'submake-errcodes'.
+make[6]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/common'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin' '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/share'
+/usr/bin/install -c  psql '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin/psql'
+/usr/bin/install -c -m 644 ./psqlrc.sample '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/share/psqlrc.sample'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/bin/psql'
+make -C scripts install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/bin/scripts'
+make -C ../../../src/interfaces/libpq all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/interfaces/libpq'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/interfaces/libpq'
+make -C ../../../src/port all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../backend submake-errcodes
+make[6]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[6]: Nothing to be done for 'submake-errcodes'.
+make[6]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../../../src/common all
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/common'
+make -C ../backend submake-errcodes
+make[6]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[6]: Nothing to be done for 'submake-errcodes'.
+make[6]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/common'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin'
+/usr/bin/install -c  createdb   '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin'/createdb
+/usr/bin/install -c  dropdb     '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin'/dropdb
+/usr/bin/install -c  createlang '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin'/createlang
+/usr/bin/install -c  droplang   '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin'/droplang
+/usr/bin/install -c  createuser '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin'/createuser
+/usr/bin/install -c  dropuser   '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin'/dropuser
+/usr/bin/install -c  clusterdb  '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin'/clusterdb
+/usr/bin/install -c  vacuumdb   '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin'/vacuumdb
+/usr/bin/install -c  reindexdb  '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin'/reindexdb
+/usr/bin/install -c  pg_isready '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin'/pg_isready
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/bin/scripts'
+make[3]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/bin'
+make -C pl install
+make[3]: Entering directory '/home/zmaril/software/cowbird/postgres/src/pl'
+make -C plpgsql install
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/pl/plpgsql'
+make -C src install
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/pl/plpgsql/src'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib'
+/usr/bin/install -c -m 755  plpgsql.so '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/plpgsql.so'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/share/extension'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server'
+/usr/bin/install -c -m 644 ./plpgsql.control ./plpgsql--1.0.sql ./plpgsql--unpackaged--1.0.sql '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/share/extension/'
+/usr/bin/install -c -m 644 './plpgsql.h' '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/include/server'
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/pl/plpgsql/src'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/pl/plpgsql'
+make[3]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/pl'
+make -C makefiles install
+make[3]: Entering directory '/home/zmaril/software/cowbird/postgres/src/makefiles'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/pgxs/src/makefiles'
+/usr/bin/install -c -m 644 ./pgxs.mk '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/pgxs/src/makefiles/'
+make[3]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/makefiles'
+make -C test/regress install
+make[3]: Entering directory '/home/zmaril/software/cowbird/postgres/src/test/regress'
+make -C ../../../src/port all
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../backend submake-errcodes
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[5]: Nothing to be done for 'submake-errcodes'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../../../src/common all
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/src/common'
+make -C ../backend submake-errcodes
+make[5]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[5]: Nothing to be done for 'submake-errcodes'.
+make[5]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/common'
+make -C ../../../contrib/spi
+make[4]: Entering directory '/home/zmaril/software/cowbird/postgres/contrib/spi'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/zmaril/software/cowbird/postgres/contrib/spi'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/pgxs/src/test/regress'
+/usr/bin/install -c  pg_regress '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/pgxs/src/test/regress/pg_regress'
+make[3]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/test/regress'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/pgxs/src'
+/usr/bin/install -c -m 644 Makefile.global '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/pgxs/src/Makefile.global'
+/usr/bin/install -c -m 644 Makefile.port '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/pgxs/src/Makefile.port'
+/usr/bin/install -c -m 644 ./Makefile.shlib '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/pgxs/src/Makefile.shlib'
+/usr/bin/install -c -m 644 ./nls-global.mk '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/pgxs/src/nls-global.mk'
+make[2]: Leaving directory '/home/zmaril/software/cowbird/postgres/src'
+make -C config install
+make[2]: Entering directory '/home/zmaril/software/cowbird/postgres/config'
+/bin/mkdir -p '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/pgxs/config'
+/usr/bin/install -c -m 755 ./install-sh '/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib/pgxs/config/install-sh'
+make[2]: Leaving directory '/home/zmaril/software/cowbird/postgres/config'
+PostgreSQL installation complete.
+make[1]: Leaving directory '/home/zmaril/software/cowbird/postgres'
+make -C src/test/regress check
+make[1]: Entering directory '/home/zmaril/software/cowbird/postgres/src/test/regress'
+make -C ../../../src/port all
+make[2]: Entering directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../backend submake-errcodes
+make[3]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[3]: Nothing to be done for 'submake-errcodes'.
+make[3]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[2]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/port'
+make -C ../../../src/common all
+make[2]: Entering directory '/home/zmaril/software/cowbird/postgres/src/common'
+make -C ../backend submake-errcodes
+make[3]: Entering directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[3]: Nothing to be done for 'submake-errcodes'.
+make[3]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/backend'
+make[2]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/common'
+make -C ../../../contrib/spi
+make[2]: Entering directory '/home/zmaril/software/cowbird/postgres/contrib/spi'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/home/zmaril/software/cowbird/postgres/contrib/spi'
+rm -rf ./testtablespace
+mkdir ./testtablespace
+PATH="/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/bin:$PATH" LD_LIBRARY_PATH="/home/zmaril/software/cowbird/postgres/tmp_install/usr/local/pgsql/lib" ../../../src/test/regress/pg_regress --inputdir=. --temp-instance=./tmp_check --bindir=    --dlpath=.  --schedule=./parallel_schedule   
+============== creating temporary instance            ==============
+============== initializing database system           ==============
+============== starting postmaster                    ==============
+running on port 57732 with PID 8980
+============== creating database "regression"         ==============
+CREATE DATABASE
+ALTER DATABASE
+============== running regression test queries        ==============
+test tablespace               ... ok
+parallel group (20 tests):  name oid regproc char pg_lsn money float4 txid int4 boolean int2 float8 varchar uuid text bit int8 enum rangetypes numeric
+     boolean                  ... ok
+     char                     ... ok
+     name                     ... ok
+     varchar                  ... ok
+     text                     ... ok
+     int2                     ... ok
+     int4                     ... ok
+     int8                     ... ok
+     oid                      ... ok
+     float4                   ... ok
+     float8                   ... ok
+     bit                      ... ok
+     numeric                  ... ok
+     txid                     ... ok
+     uuid                     ... ok
+     enum                     ... ok
+     money                    ... ok
+     rangetypes               ... ok
+     pg_lsn                   ... ok
+     regproc                  ... ok
+test strings                  ... ok
+test numerology               ... ok
+parallel group (20 tests):  comments lseg circle box tinterval reltime time line path timetz macaddr abstime tstypes point polygon date inet interval timestamp timestamptz
+     point                    ... ok
+     lseg                     ... ok
+     line                     ... ok
+     box                      ... ok
+     path                     ... ok
+     polygon                  ... ok
+     circle                   ... ok
+     date                     ... ok
+     time                     ... ok
+     timetz                   ... ok
+     timestamp                ... ok
+     timestamptz              ... ok
+     interval                 ... ok
+     abstime                  ... ok
+     reltime                  ... ok
+     tinterval                ... ok
+     inet                     ... ok
+     macaddr                  ... ok
+     tstypes                  ... ok
+     comments                 ... ok
+parallel group (6 tests):  geometry regex horology oidjoins type_sanity opr_sanity
+     geometry                 ... ok
+     horology                 ... ok
+     regex                    ... ok
+     oidjoins                 ... ok
+     type_sanity              ... ok
+     opr_sanity               ... ok
+test insert                   ... ok
+test insert_conflict          ... ok
+test create_function_1        ... ok
+test create_type              ... ok
+test create_table             ... ok
+test create_function_2        ... ok
+parallel group (2 tests):  copyselect copy
+     copy                     ... ok
+     copyselect               ... ok
+parallel group (2 tests):  create_operator create_misc
+     create_misc              ... ok
+     create_operator          ... ok
+parallel group (2 tests):  create_view create_index
+     create_index             ... ok
+     create_view              ... ok
+parallel group (12 tests):  create_cast create_aggregate drop_if_exists create_function_3 typed_table vacuum rolenames constraints create_table_like triggers inherit updatable_views
+     create_aggregate         ... ok
+     create_function_3        ... ok
+     create_cast              ... ok
+     constraints              ... ok
+     triggers                 ... ok
+     inherit                  ... ok
+     create_table_like        ... ok
+     typed_table              ... ok
+     vacuum                   ... ok
+     drop_if_exists           ... ok
+     updatable_views          ... ok
+     rolenames                ... ok
+test sanity_check             ... ok
+test errors                   ... ok
+test select                   ... ok
+parallel group (20 tests):  select_distinct_on delete select_having select_distinct case namespace random update hash_index select_implicit btree_index select_into portals transactions union subselect aggregates arrays join prepared_xacts
+     select_into              ... ok
+     select_distinct          ... ok
+     select_distinct_on       ... ok
+     select_implicit          ... ok
+     select_having            ... ok
+     subselect                ... ok
+     union                    ... ok
+     case                     ... ok
+     join                     ... ok
+     aggregates               ... ok
+     transactions             ... ok
+     random                   ... ok
+     portals                  ... ok
+     arrays                   ... ok
+     btree_index              ... ok
+     hash_index               ... ok
+     update                   ... ok
+     namespace                ... ok
+     prepared_xacts           ... ok
+     delete                   ... ok
+parallel group (12 tests):  lock security_label replica_identity object_address collate rowsecurity privileges gin spgist matview brin gist
+     brin                     ... ok
+     gin                      ... ok
+     gist                     ... ok
+     spgist                   ... ok
+     privileges               ... ok
+     security_label           ... ok
+     collate                  ... ok
+     matview                  ... ok
+     lock                     ... ok
+     replica_identity         ... ok
+     rowsecurity              ... ok
+     object_address           ... ok
+parallel group (4 tests):  async psql alter_generic misc
+     alter_generic            ... ok
+     misc                     ... ok
+     psql                     ... ok
+     async                    ... ok
+test rules                    ... ok
+parallel group (19 tests):  portals_p2 combocid advisory_lock tsdicts equivclass xmlmap dependency guc json functional_deps tsearch cluster jsonb select_views window foreign_key foreign_data indirect_toast bitmapops
+     select_views             ... ok
+     portals_p2               ... ok
+     foreign_key              ... ok
+     cluster                  ... ok
+     dependency               ... ok
+     guc                      ... ok
+     bitmapops                ... ok
+     combocid                 ... ok
+     tsearch                  ... ok
+     tsdicts                  ... ok
+     foreign_data             ... ok
+     window                   ... ok
+     xmlmap                   ... ok
+     functional_deps          ... ok
+     advisory_lock            ... ok
+     json                     ... ok
+     jsonb                    ... ok
+     indirect_toast           ... ok
+     equivclass               ... ok
+parallel group (19 tests):  limit conversion prepare xml plancache temp returning copy2 sequence without_oid polymorphism truncate domain with rowtypes rangefuncs largeobject alter_table plpgsql
+     plancache                ... ok
+     limit                    ... ok
+     plpgsql                  ... ok
+     copy2                    ... ok
+     temp                     ... ok
+     domain                   ... ok
+     rangefuncs               ... ok
+     prepare                  ... ok
+     without_oid              ... ok
+     conversion               ... ok
+     truncate                 ... ok
+     alter_table              ... ok
+     sequence                 ... ok
+     polymorphism             ... ok
+     rowtypes                 ... ok
+     returning                ... ok
+     largeobject              ... ok
+     with                     ... ok
+     xml                      ... ok
+test event_trigger            ... ok
+test stats                    ... ok
+============== shutting down postmaster               ==============
+============== removing temporary instance            ==============
+
+=======================
+ All 153 tests passed. 
+=======================
+
+make[1]: Leaving directory '/home/zmaril/software/cowbird/postgres/src/test/regress'
