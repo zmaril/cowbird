@@ -1,0 +1,6 @@
+#!/bin/bash
+
+pushd `pwd`
+cd ..
+strace -o poop -f lein run postgres $@
+popd
