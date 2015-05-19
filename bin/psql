@@ -1,4 +1,4 @@
 #!/bin/bash
 
 cd ~/software/cowbird
-lein run postgres $@
+lein run psql $@

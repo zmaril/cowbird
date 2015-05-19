@@ -3,8 +3,10 @@
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
-  :dependencies [[org.clojure/clojure "1.6.0"]
+  :dependencies [[org.clojure/clojure "1.7.0-beta3"]
                  [org.clojure/tools.cli "0.3.1"]
-                 [org.newsclub/junixsocket "1.3"]
+                 [org.clojure/tools.logging "0.3.1"]
+                 [aleph "0.4.0"]
+                 [environ "1.0.0"]
                  [instaparse "1.4.0"]]
   :main cowbird.core)

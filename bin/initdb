@@ -1,6 +1,4 @@
 #!/bin/bash
 
-pushd `pwd`
-cd ..
+cd ~/software/cowbird
 lein run initdb $@
-popd
