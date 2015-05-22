@@ -1,7 +1,9 @@
 (ns cowbird.postgres
   (:require [clojure.tools.cli :refer [parse-opts]]
+            [cowbird.protocol :refer [startup-packet]]
+            [gloss.io :as gio]
             [aleph.tcp :as tcp]
-            [manifold.stream :as s]
+            [manifold.stream :as stream]
             [byte-streams :as b]
             [clojure.java.io :as io]))
 
@@ -15,20 +17,17 @@
     :id :named-parameter] ;;TODO there can be multiple of these
     ])
 
+(defonce a (atom nil))
+
 (defn handler [s info]
-  (println "START")
-  (println (type s) (.sink s) (.source s))
-  (println (b/print-bytes (.sink s)))
-  ;(println (b/convert s String))
-  (println "STOP")
-  (s/connect s s))
+  (stream/consume (partial reset! a)  s))
 
 (defn start-server
-  [{:keys [port host]}]
+  [port]
   (tcp/start-server handler {:port port}))
 
 (defn postgres [args]
   (let [args (-> (parse-opts args postgres-cli-options)
                  (assoc-in [:options :port] (Integer/parseInt (System/getenv "PGPORT"))))]
     (println args)
-    (start-server (:options args))))
+    (start-server (-> args :options :port))))
