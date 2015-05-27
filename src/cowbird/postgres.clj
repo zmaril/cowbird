@@ -28,63 +28,49 @@
     (mapv vec $)
     (into {} $)))
 
-(def last-msg (atom nil))
-
-(defn handle-startup [to-client start-packet]
-  (println "Handling startup")
-  )
-
-(defn handle-regular [to-client msg]
-  (println "Handling regular")
-  )
-(defn consumer [to-client msg]
-  (reset! last-msg msg)
-  (b/print-bytes msg)
-  (if (zero? (first msg))
-    (handle-startup to-client (startup-packet->map msg))
-    (handle-regular to-client msg)))
-
 (def encode-packet  #(gio/encode regular-packet %))
 
-(defn handle-message [{:keys [sent-auth-request? id info client-info to-client] :as m} msg]
-  (println "---------------------")
-  (println "Handle message")
-  (println "Connection id " id)
-  (println "sent-auth-request?" sent-auth-request?)
-  (println to-client)
-  (b/print-bytes msg)
-  (if-not sent-auth-request?
-    (let [response {:type :auth-request
-                    :payload [12 :md5 "haha"]}]      
-      (println "Startup")
-      (println "Sent md5 password request")
-      (b/print-bytes (encode-packet response))
-      (println (stream/put! to-client (encode-packet response)))
-      (println " ")
-      (-> m
-          (assoc :client-info (startup-packet->map msg))
-          (assoc :sent-auth-request? true)))
-    (do 
-      (let [sure-ok {:type :auth-request
-                     :payload [12 :ok]}
-            response {:type :query-status
-                      :payload [5 :idle]}]
-        (println "Sure, password looks fine")
-        (b/print-bytes (encode-packet sure-ok))
-        (stream/put! to-client (encode-packet sure-ok))
-        (println "Sending idle status")
-        (b/print-bytes (encode-packet response))
-        (stream/put! to-client (encode-packet response))
-        (println "Sent okay")
-        (println "")
-        m))))
+(defn handle-startup-message [{:keys [to-client] :as m} msg]
+  (let [response {:type :auth-request
+                  :payload [12 :md5 "haha"]}]
+    (stream/put! to-client (encode-packet response))
+    (-> m
+        (assoc :client-info (startup-packet->map msg))
+        (assoc :sent-auth-request? true))))
+
+
+(defmulti handle-regular-message (fn [_ msg] (:type msg)))
+
+(defmethod handle-regular-message :default [& params]
+  (println "Cannot handle " params)
+  (/ 1 'asshole))
+
+
+(defmethod handle-regular-message :password
+  [{:keys [to-client] :as m} {[_ query-status-code] :payload}]
+  (let [sure-ok  {:type :auth-request :payload [12 :ok]}
+        response {:type :query-status :payload [5 :idle]}]
+    (stream/put! to-client (encode-packet sure-ok))
+    (stream/put! to-client (encode-packet response))
+    m))
+
+(defmethod handle-regular-message :query
+  [{:keys [to-client] :as m} {[_ query] :payload}]
+  (println query))
+
+;;TODO: handle cancel requests. They have a different structure than
+;;startup/regular packets. 
+(defn handle-message [{:keys [sent-auth-request?] :as m} msg]
+  (if sent-auth-request?
+    (handle-regular-message m (gio/decode regular-packet msg))
+    (handle-startup-message m msg)))
 
 (defn handler [s info]
   (stream/reduce handle-message
                  {:sent-auth-request? false
                   :to-client s
                   :info info
-                  :id (rand)}
+                  :id (rand-int 10000)}
                  s))
 
 (defn start-server

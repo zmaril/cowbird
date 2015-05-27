@@ -27,18 +27,34 @@
 (defcodec query-status-codes
   (enum :int32 {:idle \I}))
 
+(defcodec query
+  (ordered-map
+   :type :query
+   :payload
+   [:int32 (string :utf-8)]))
+
 (defcodec query-status
   (ordered-map
    :type :query-status
    :payload
    [:int32 query-status-codes]))
 
+(defcodec password
+  (ordered-map
+   :type :password
+   :payload
+   [:int32 (string :utf-8)]))
+
 (defcodec tag (enum :byte {:auth-request \R
-                            :query-status \Z}))
+                           :password     \p
+                           :query        \Q
+                           :query-status \Z}))
 (defcodec regular-packet
   (header
    tag
    {:auth-request  auth-request
+    :password      password
+    :query         query 
     :query-status  query-status}
    :type
    ))

@@ -21,8 +21,7 @@
   (log/info "WHAT IS GOING ON")
   (let [args (-> (parse-opts args psql-cli-options)
                  (assoc-in [:options :port] (Integer/parseInt (System/getenv "PGPORT")))
-                 (assoc-in [:options :host] (System/getenv "PGHOST"))
-                 )
+                 (assoc-in [:options :host] (System/getenv "PGHOST")))
         _ (log/info args)
         client (create-client (:options args))]
     (log/info client)
