@@ -9,5 +9,8 @@
                  [gloss "0.2.5"]
                  [aleph "0.4.0"]
                  [environ "1.0.0"]
-                 [instaparse "1.4.0"]]
+                 [instaparse "1.4.0"]
+                 [com.stuartsierra/component "0.2.3"]]
+  :profiles {:dev {:dependencies [[org.clojure/tools.namespace "0.2.7"]]
+                   :source-paths ["dev"]}}
   :main cowbird.core)

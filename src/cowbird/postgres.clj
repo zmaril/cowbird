@@ -1,5 +1,6 @@
 (ns cowbird.postgres
   (:require [clojure.tools.cli :refer [parse-opts]]
+            [com.stuartsierra.component :as component]
             [cowbird.protocol :refer [startup-packet regular-packet]]
             [gloss.io :as gio]
             [gloss.core :as gloss]
@@ -61,6 +62,7 @@
 ;;TODO: handle cancel requests. They have a different structure than
 ;;startup/regular packets. 
 (defn handle-message [{:keys [sent-auth-request?] :as m} msg]
+  (b/print-bytes msg)
   (if sent-auth-request?
     (handle-regular-message m (gio/decode regular-packet msg))
     (handle-startup-message m msg)))
@@ -73,13 +75,22 @@
                   :id (rand-int 10000)}
                  s))
 
-(defn start-server
-  [port]
-  (tcp/start-server handler {:port port}))
+(defrecord Postgres [port server]
+  component/Lifecycle
 
-(defn postgres [args]
+  (start [component]
+    (println "Starting tcp server")
+    (assoc component :server (tcp/start-server handler {:port port})))
+
+  (stop [component]
+    (println "Stoping tcp server")
+    (.close server)
+    (assoc component :server nil)))
+
+
+(defn new-database [args]
   (let [args (-> (parse-opts args postgres-cli-options)
-                 (assoc-in [:options :port] (Integer/parseInt (System/getenv "PGPORT"))))]
-    (println args)
-    (start-server (-> args :options :port))))
+                 (assoc-in [:options :port] (Integer/parseInt (System/getenv "PGPORT"))))
+        postgres (map->Postgres (:options args))]
+    (.start postgres)))
 
