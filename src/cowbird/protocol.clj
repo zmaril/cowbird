@@ -1,6 +1,12 @@
 (ns cowbird.protocol
   (require [gloss.core :refer :all]
            [gloss.io   :refer :all]))
+
+(def query-int32-prefix
+  (prefix :int32
+          #(- % 4)
+          #(+ % 4)))
+
 ;;Can't quite figure out how to encode this the right way. Relies on a transform
 ;;afterwords.
 (defcodec startup-packet
@@ -21,42 +27,42 @@
   (ordered-map
    :type :auth-request
    :payload
-   [:int32 auth-request-codes (string :utf-8 :length 4)]
-   ))
+   (finite-frame query-int32-prefix
+                 [auth-request-codes (string :utf-8)])))
 
 (defcodec query-status-codes
-  (enum :int32 {:idle \I}))
+  (enum :byte {:idle \I}))
 
 (defcodec query
   (ordered-map
    :type :query
    :payload
-   [:int32 (string :utf-8)]))
+   (finite-frame query-int32-prefix (string :utf-8))))
+
 
 (defcodec query-status
   (ordered-map
    :type :query-status
    :payload
-   [:int32 query-status-codes]))
+   (finite-frame query-int32-prefix query-status-codes)))
 
 (defcodec password
   (ordered-map
    :type :password
    :payload
-   [:int32 (string :utf-8)]))
+   (finite-frame query-int32-prefix (string :utf-8))))
 
-(defcodec tag (enum :byte {:auth-request \R
-                           :password     \p
-                           :query        \Q
-                           :query-status \Z}))
+(defcodec tag
+  (enum :byte {:auth-request \R
+               :password     \p
+               :query        \Q
+               :query-status \Z}))
+
 (defcodec regular-packet
   (header
    tag
    {:auth-request  auth-request
     :password      password
-    :query         query 
+    :query         query
     :query-status  query-status}
-   :type
-   ))
-
-;;(byte-streams/print-bytes  (encode regular-packet {:type :auth-request :payload [:ok ""]}))
+   :type))

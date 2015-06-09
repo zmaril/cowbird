@@ -33,14 +33,17 @@
 
 (defn handle-startup-message [{:keys [to-client] :as m} msg]
   (let [response {:type :auth-request
-                  :payload [12 :md5 "haha"]}]
+                  :payload [:md5 "haha"]}]
     (stream/put! to-client (encode-packet response))
     (-> m
         (assoc :client-info (startup-packet->map msg))
         (assoc :sent-auth-request? true))))
 
 
-(defmulti handle-regular-message (fn [_ msg] (:type msg)))
+(defmulti handle-regular-message
+  (fn [_ msg]
+    (println "Handling message type: " (:type msg))
+    (:type msg)))
 
 (defmethod handle-regular-message :default [& params]
   (println "Cannot handle " params)
@@ -49,8 +52,8 @@
 
 (defmethod handle-regular-message :password
   [{:keys [to-client] :as m} {[_ query-status-code] :payload}]
-  (let [sure-ok  {:type :auth-request :payload [12 :ok]}
-        response {:type :query-status :payload [5 :idle]}]
+  (let [sure-ok  {:type :auth-request :payload [:ok]}
+        response {:type :query-status :payload :idle}]
     (stream/put! to-client (encode-packet sure-ok))
     (stream/put! to-client (encode-packet response))
     m))
@@ -59,13 +62,24 @@
   [{:keys [to-client] :as m} {[_ query] :payload}]
   (println query))
 
+(defonce last-packet (atom nil))
+(defn decode-packet [msg]
+  (reset! last-packet msg)
+  (-> (future (gio/decode regular-packet msg))
+      (deref 100 :error)))
+
 ;;TODO: handle cancel requests. They have a different structure than
 ;;startup/regular packets. 
 (defn handle-message [{:keys [sent-auth-request?] :as m} msg]
-  (b/print-bytes msg)
-  (if sent-auth-request?
-    (handle-regular-message m (gio/decode regular-packet msg))
-    (handle-startup-message m msg)))
+  (let [msg (b/convert msg String)]
+    (println "New message:")
+    (b/print-bytes msg)
+    (when sent-auth-request? (println (decode-packet msg)))
+    (println "Sent auth-request:" sent-auth-request?)
+    (println)
+    (if sent-auth-request?      
+      (handle-regular-message m (decode-packet msg))
+      (handle-startup-message m msg))))
 
 (defn handler [s info]
   (stream/reduce handle-message

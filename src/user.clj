@@ -10,6 +10,7 @@
    [clojure.set :as set]
    [clojure.string :as str]
    [clojure.test :as test]
+   [clojure.tools.logging :as log]
    [com.stuartsierra.component :as component]
    [clojure.tools.namespace.repl :refer [refresh refresh-all]]
    [cowbird.postgres :refer [->Postgres]]))
@@ -22,7 +23,11 @@
 (defn init
   "Creates and initializes the system under development in the Var
   #'system."
-  [])
+  []
+  (Thread/setDefaultUncaughtExceptionHandler
+   (reify Thread$UncaughtExceptionHandler
+     (uncaughtException [_ thread ex]
+       (log/error ex "Uncaught exception on" (.getName thread))))))
 
 (defn start
   "Starts the system running, updates the Var #'system."
