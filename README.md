@@ -33,11 +33,6 @@ getting anywhere all too interesting, especially when dealing with binary
 protocols. I bought the rust book and started trying to reimplement cowbird in that
 language but it got a bit overwhelming so I stopped. Elixir is my next try, so let's see what happens.
 
-## What are some interesting parts to look at?
-
-* The parser for postgres' binary protocol. 
-* The parser for postgres' sql implementation. 
-
 ## What is a cowbird? 
 
 In nature, a cowbird is a bird that lays eggs in the nests of other birds.
@@ -74,3 +69,10 @@ cd resources/postgres
 ./configure
 make
 ```
+
+
+## What are some interesting parts to look at?
+
+* The parser for postgres' binary protocol. 
+* The parser for postgres' sql implementation. 
+* Some notes I've written up.
