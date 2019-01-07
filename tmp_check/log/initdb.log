@@ -1,4 +1,0 @@
-Running in noclean mode.  Mistakes will not be cleaned up.
-The program "postgres" is needed by initdb but was not found in the
-same directory as "/usr/local/Cellar/libpq/9.6.6/bin/initdb".
-Check your installation.

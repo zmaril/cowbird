@@ -23,3 +23,4 @@ erl_crash.dump
 cowbird-*.tar
 
 /test/output
+/tmp_check/**
