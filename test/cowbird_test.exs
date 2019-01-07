@@ -16,7 +16,8 @@ defmodule CowbirdTest do
        "--outputdir=./test/output",
        "--host=localhost",
        "--use-existing"],
-      env: [{"PATH", System.get_env("PATH") <> ":" <> cwd <> "/bin"}],
+      env: [{"PATH", System.get_env("PATH") <> ":" <> cwd <> "/bin"},
+            {"PGCTLTIMEOUT", "1"}],
       stderr_to_stdout: true
     )
     {:ok, exit_code: exit_code, cmd_output: cmd_output}

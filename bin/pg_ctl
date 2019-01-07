@@ -1,4 +1,3 @@
 #!/bin/bash
 
-cd ~/software/cowbird
-lein run pg_ctl $@
+~/software/cowbird/bin/cowbird pg_ctl $@
