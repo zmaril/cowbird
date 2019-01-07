@@ -2,9 +2,11 @@ defmodule Cowbird.CLI do
   alias Cowbird.Initdb
 
   def main(args) do
-    IO.puts(args)
-    case List.first(args) do
-      "initdb" -> Cowbird.Initdb.main(args)
+    IO.puts("Loading up CLI main")
+    IO.inspect(args)
+    [mode | rest] = args
+    case mode do
+      "initdb" -> Initdb.main(rest)
     end
   end
 end

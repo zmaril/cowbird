@@ -68,6 +68,8 @@ git submodule update --init --recursive
 cd resources/postgres
 ./configure
 make
+cd ../..
+mix regress #custom mix task that builds the escripts executables and then runs the postgres regression test suite
 ```
 
 
